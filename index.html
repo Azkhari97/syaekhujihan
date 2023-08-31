@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan ~ Syaekhu & Jihan</title>
+   <link rel="preload" as="image" href="awal.jpg" />
+    <script>
+      
+      let audio = document.createElement('audio');
+      console.log(audio)
+      if("src" in audio){
+        audio.src = "assets/audio-min.mp3";
+        audio.currentTime = 4
+      }
+      
+    </script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+      <!-- Make sure you put this AFTER Leaflet's CSS -->
+      <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+  </head>
+  <body>
+    
+    <div id="control">
+      <button id="play">
+        <img src="assets/music.svg" alt="play/pause button for music" />
+      </button>
+      <button id="scroll">
+        <img src="assets/scroll.svg" alt="auto scroll button" />
+      </button>
+    </div>
+    
+    <section id="awal">
+      <img draggable="true" src="assets/image-from-rawpixel.png" alt="frame bunga" />
+      <div class="awalText">
+      <p>The Wedding of</p>
+      <h2>Syaekhu Ma'mun</h2>
+      <h2>&amp;</h2>
+      <h2>Jihan Larasati</h2>
+      <p>24 & 25 September 2023</p>
+      </div>
+    </section>
+    
+    <section id="couple">
+      
+      <div class="pra">
+        <p class="salam">Assalamu 'alaikum Warrahmatullahi Wabarakatuh</p>
+        <p data-aos="fade-up">
+          Dengan memohon rahmat dan ridho Allah SWT, <br>
+          Mohon do'a restu Bapak/Ibu/Saudara/i dalam rangka melangsungkan pernikahan putra-putri kami:
+        </p>
+      </div>
+      
+      <div class="c-couple">
+      <div class="foto-couple">
+        <img src="gallery/groom.jpg" alt="foto Syekhun Ma'mun" />
+      </div>
+      <div class="foto-couple">
+        <img src="gallery/bride.jpg" alt="foto Jihan Larasati" />
+      </div>
+      </div>
+      
+      <div class="i-couple">
+      <div class="couple-part" data-aos="fade-up">
+        <h2 data-aos="fade-up" data-aos-delay="100">Syaekhu Ma'mun</h2>
+        <p data-aos="fade-down" data-aos-delay="100">Putra Pertama dari Bapak Subkhi dan Ibu Bawon</p>
+      </div>
+      <h2 class="amp" data-aos="zoom-in">&</h2>
+      <div class="couple-part" data-aos="fade-up">
+        <h2 data-aos="fade-up" data-aos-delay="100">Jihan Larasati</h2>
+        <p data-aos="fade-down" data-aos-delay="100">Putri Kedua dari Bapak Sukirno dan Ibu Sri Amanyi</p>
+      </div>
+        <div class="flower"></div>
+      </div>
+      
+      <!--
+      <img class="dekor" src="assets/frameAtas.png" alt="dekorasi" />
+      <img class="dekor2" src="assets/frameAtas.png" alt="dekorasi" />
+      <img class="dekor3" src="assets/redRose.png" alt="dekorasi" />
+      -->
+      
+      
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      
+    </section>
+    
+    <section id="acara">
+      <h2>Events</h2>
+      
+      <div class="akad">
+        <div class="isi">
+          <h3>Akad Nikah</h3>
+          <hr class="line">
+          <div class="tanggal">
+            <div class="jam">
+              <p>Senin</p>
+              <p>07.00</p>
+            </div>
+            <div class="hari">
+              <p>25</p>
+            </div>
+            <div class="bulan">
+              <p>September</p>
+              <p>2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="akad">
+        <div class="isi">
+          <h3>Resepsi</h3>
+          <hr class="line">
+          <div class="tanggal">
+            <div class="jam">
+              <p>Senin</p>
+              <p>08.00</p>
+            </div>
+            <div class="hari">
+              <p>25</p>
+            </div>
+            <div class="bulan">
+              <p>September</p>
+              <p>2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="akad">
+        <div class="isi">
+          <h3>Alamat</h3>
+          <hr class="line">
+          
+          <div class="alamat">
+            <p>
+              Dukuh Ponolawen, RT 16/ RW 6, nomor 19, Desa Ponolawen kulon Kecamatan Kesesi, Kabupaten Pekalongan, Jawa Tengah
+            </p>
+          </div>
+          <div id="map">
+            
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    
+    
+    <section id="galeri">
+      <h2>Our Memories</h2>
+      
+      <!--
+      <div class="timeline" data-aos="fade-up">
+        <img class="fl" src="gallery/1.jpg" alt="Album foto" />
+        <img class="fl" src="gallery/2.jpg" alt="Album foto" />
+        <img class="fl" src="gallery/6.jpg" alt="Album foto" />
+        <img class="fl" src="gallery/4.jpg" alt="Album foto" />
+        <img class="fl" src="gallery/5.jpg" alt="Album foto" />
+      </div>-->
+      
+      <div id="preview">
+        
+      </div>
+      
+      <div class="foto">
+        <img class="fl active" src="gallery/1.jpg" alt="Album foto" />
+        <img class="fl" src="gallery/2.jpg" alt="Album foto" />
+        <img class="fl" src="gallery/6.jpg" alt="Album foto" />
+        <img class="fl" src="gallery/4.jpg" alt="Album foto" />
+        <img class="fl" src="gallery/5.jpg" alt="Album foto" />
+        
+        <!--<div class="thumb">
+          <img class="th" src="gallery/1.jpg" alt="Album foto" />
+          <img class="th" src="gallery/2.jpg" alt="Album foto" />
+          <img class="th" src="gallery/6.jpg" alt="Album foto" />
+          <img class="th" src="gallery/4.jpg" alt="Album foto" />
+          <img class="th active" src="gallery/5.jpg" alt="Album foto" />
+        </div>-->
+        
+      </div>
+    </section>
+    
+    
+    <section id="gift">
+      
+      <h2>Gift</h2>
+      
+      <div class="rekening" data-aos="slide-right">
+        <img src="assets/bri.png" alt="logo bank rekening" />
+        <div class="info">
+        <p>369401038919530</p>
+        <p>Jihan Larasati</p>
+        <button onclick="copy(this, '369401038919530')">Salin</button>
+        </div>
+      </div>
+      <div class="rekening" data-aos="slide-right">
+        <img src="assets/bri.png" alt="logo bank rekening" />
+        <div class="info">
+        <p>116301002643504</p>
+        <p>Syaekhu Ma'mun</p>
+        <button onclick="copy(this, '116301002643504')">Salin</button>
+        </div>
+      </div>
+      
+      
+      <button id="g-btn" onclick="tulisPesan()">
+        Kirim Pesan
+      </button>
+      
+      
+      <div class="c-pesan">
+        
+        
+        
+      </div>
+      
+      <img class="gf" src="assets/frameAwal.png" alt="background bunga" />
+    </section>
+    
+    
+    <section id="penutup">
+      <p>
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do’a restu kepada kedua mempelai.
+      </p>
+      <p data-aos="zoom-in-down">
+        <i>
+        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir." (QS. Ar-Rum: 21)
+        </i>
+        </p>
+        <p class="salam">
+          Wassalamu'alaikum Warahmatullahi Wabarakatuh
+        </p>
+        <p class="my-2">Turut berbahagia, <br>
+          Segenap keluarga besar
+        </p>
+        
+        <h2>Syaekhu Ma'mun</h2>
+        <h2>&amp;</h2>
+        <h2>Jihan Larasati</h2>
+        
+        <!--
+      <img class="dekor" src="assets/frameAtas.png" alt="dekorasi" />
+        -->
+      <img class="dekor2" src="assets/frame2.png" alt="dekorasi" />
+    
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      <span class="flowers"></span>
+      
+        
+    </section>
+    
+    <footer>
+      <p>Undangan dibuat oleh : <a href="https://wa.me/6289650292753">Afzal Azkhari</a>, 
+      images by <a href="https://www.rawpixel.com/">rawpixel.com</a></p>
+    </footer>
+    
+    <script src="mine.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" type="text/javascript">
+    </script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
