@@ -1,3 +1,40 @@
+window.onload = (e)=>{
+  console.log("everything loaded");
+  tamu();
+  let bukaUndangan = document.getElementById('bukaUndangan');
+  bukaUndangan.removeAttribute('disabled')
+  bukaUndangan.onclick = function(e){
+    console.log(e.target.parentNode.getAttribute('id'))
+    document.body.style.setProperty("--play", "play");
+    e.target.parentNode.parentNode.style.display = "none";
+    togglePlay();
+    window.scrollTo(0,0);
+    //scrBtn.click()
+  }
+}
+      
+let audio = document.createElement('audio');
+console.log(audio)
+if("src" in audio){
+     audio.src = "assets/audio-min.mp3";
+     audio.currentTime = 4
+}
+      
+      
+function tamu(){
+  let tujuan = document.location.href.split('?');
+  
+  if(tujuan.length > 1){
+  tujuan = tujuan[tujuan.length-1].split("=")[1];
+  let tamu = document.getElementById('tamu');
+  tamu.innerHTML = "";
+  let teksP = document.createElement('p');
+  teksP.textContent = tujuan.replace("-", " ");
+  tamu.appendChild(teksP)
+  }
+}
+      
+
 let playing = false
 function togglePlay(){
   console.log(playing)
@@ -14,10 +51,6 @@ function scroll(x, y){
    window.scrollBy(x, y)
 }
 
-document.body.onclick = ()=>{
-   document.body.style.setProperty("--play", "play");
-   
-}
 
 let scrBtn = document.getElementById('scroll');
 let autoScroll = false;
@@ -67,7 +100,7 @@ let x = setInterval(flowering, 5000)
       
 //Acara section
       
-let koord = [-6.400687, -252.554145]
+let koord = [-6.995901, 109.510453]
   
 var map = L.map('map',{
     dragging : false,
@@ -84,7 +117,7 @@ googleStreets.addTo(map)
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);*/
 var marker = L.marker(koord).addTo(map);
-marker.bindPopup("<p>Dukuh Ponolawen, RT 16/ RW 6, nomor 19, Desa Ponolawen kulon Kecamatan Kesesi, Kabupaten Pekalongan, Jawa Tengah</p>");
+marker.bindPopup("<a style='color: #000; text-decoration: none; text-align: center;' href='https://maps.app.goo.gl/pHZNfzJhv67RJzM48'>Dukuh Ponolawen, RT 16/ RW 6, Desa Ponolawen kulon Kecamatan Kesesi, Kabupaten Pekalongan, Jawa Tengah</a>");
   
       
 //galeri section
@@ -315,5 +348,44 @@ function tulisPesan(){
 }
 
 
- 
+let waktuAcara = new Date("Sep 25, 2023 09:00:00").getTime();
+function timer(){
   
+  let waktu = new Date().getTime();
+  let durasi = waktuAcara - waktu;
+  
+  if(durasi <= 0){
+    return "selesai"
+  }
+  
+  let hari = Math.floor(durasi/1000/60/60/24);
+  let jam = Math.floor((durasi % (1000*60*60*24))/1000/60/60);
+  let menit = Math.floor((durasi % (60*60*1000))/1000/60);
+  let detik = Math.floor((durasi % (60*1000))/1000);
+  console.log(hari + ", " + jam + ", " +menit + ", " + detik);
+  
+  return [hari, jam, menit, detik];
+}
+
+function countDown(arr = []){
+  let counts = document.getElementsByClassName('count')
+  
+  for(let m = 0; m<counts.length; ++m){
+    counts[m].textContent = arr[m];
+  }
+}
+
+let c = setInterval(()=>{
+  let arr = timer();
+  //console.log(arr)
+  if(arr == "selesai"){
+    document.getElementById('counter').innerHTML =`
+    <div class="selesai">
+    Acara sudah dimulai
+    </div>
+    `;
+  }
+  else{
+   countDown(arr);
+  }
+}, 1000);
