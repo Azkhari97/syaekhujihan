@@ -3,18 +3,13 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Undangan Pernikahan ~ Syaekhu & Jihan</title>
+   <meta name="description" content="Undangan pernikahan Syaekhu & Jihan" />
+    <meta property="og:image" 
+    content="./awal.jpg" />
+   
+    <title>Undangan Pernikahan Syaekhu & Jihan</title>
    <link rel="preload" as="image" href="awal.jpg" />
-    <script>
-      
-      let audio = document.createElement('audio');
-      console.log(audio)
-      if("src" in audio){
-        audio.src = "assets/audio-min.mp3";
-        audio.currentTime = 4
-      }
-      
-    </script>
+    
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400&display=swap" rel="stylesheet">
@@ -30,6 +25,54 @@
      crossorigin=""></script>
   </head>
   <body>
+    
+    <section id="cover">
+      <p>The Wedding of</p>
+      <div class="c-poster">
+      <h2>Syaekhu</h2>
+      <h2>&amp;</h2>
+      <h2>Jihan</h2>
+      </div>
+      <p>24 - 25 September 2023</p>
+      
+      <div id="counter">
+        <div>
+          <h3 class="count">
+            0
+          </h3>
+          <p>Hari</p>
+        </div>
+        <div>
+          <h3 class="count">
+            0
+          </h3>
+          <p>Jam</p>
+        </div>
+        <div>
+          <h3 class="count">
+            0
+          </h3>
+          <p>Menit</p>
+        </div>
+        <div>
+          <h3 class="count">
+            0
+          </h3>
+          <p>detik</p>
+        </div>
+      </div>
+      
+      <div id="tamu">
+        <p>Tamu Undangan</p>
+      </div>
+      <button id="bukaUndangan" onclick="window.location.reload()">
+        <span>
+          Buka Undangan
+        </span>
+      </button>
+    </section>
+    
+    
     
     <div id="control">
       <button id="play">
@@ -83,12 +126,6 @@
         <div class="flower"></div>
       </div>
       
-      <!--
-      <img class="dekor" src="assets/frameAtas.png" alt="dekorasi" />
-      <img class="dekor2" src="assets/frameAtas.png" alt="dekorasi" />
-      <img class="dekor3" src="assets/redRose.png" alt="dekorasi" />
-      -->
-      
       
       <span class="flowers"></span>
       <span class="flowers"></span>
@@ -138,7 +175,7 @@
           <div class="tanggal">
             <div class="jam">
               <p>Senin</p>
-              <p>07.00</p>
+              <p>09.00</p>
             </div>
             <div class="hari">
               <p>25</p>
@@ -158,7 +195,7 @@
           <div class="tanggal">
             <div class="jam">
               <p>Senin</p>
-              <p>08.00</p>
+              <p>11.00</p>
             </div>
             <div class="hari">
               <p>25</p>
@@ -178,8 +215,10 @@
           
           <div class="alamat">
             <p>
-              Dukuh Ponolawen, RT 16/ RW 6, nomor 19, Desa Ponolawen kulon Kecamatan Kesesi, Kabupaten Pekalongan, Jawa Tengah
+              Dukuh Ponolawen, RT 16/ RW 6, Desa Ponolawen kulon Kecamatan Kesesi, Kabupaten Pekalongan, Jawa Tengah
             </p>
+            <p style="margin: 2% auto;"></p>
+            <a style="color: #fff; font-weight: bold; background: transparent; padding: 2%;" href="https://maps.app.goo.gl/pHZNfzJhv67RJzM48">Klik untuk buka GMaps</a>
           </div>
           <div id="map">
             
@@ -191,16 +230,46 @@
     
     
     <section id="galeri">
-      <h2>Our Memories</h2>
+      <h2>Our Story</h2>
       
-      <!--
       <div class="timeline" data-aos="fade-up">
-        <img class="fl" src="gallery/1.jpg" alt="Album foto" />
-        <img class="fl" src="gallery/2.jpg" alt="Album foto" />
-        <img class="fl" src="gallery/6.jpg" alt="Album foto" />
-        <img class="fl" src="gallery/4.jpg" alt="Album foto" />
-        <img class="fl" src="gallery/5.jpg" alt="Album foto" />
-      </div>-->
+        
+        <div class="t-part">
+          <img src="assets/consult.svg" alt="first meet" />
+          <p>
+            <span>
+              23 Agustus 2019
+            </span>
+            Aku pertemu pertama Kali dengan Calon suamiku di Bandara Internasional Soekarno Hatta. Kala itu kami dan tim ditugaskan untuk terbang ke Palembang untuk bekerja di Restoran Yang Sama.
+            </p>
+        </div>
+        
+        <div class="t-part">
+          <img src="assets/couple.svg" alt="valentine photo" />
+          <p>
+            Sebenarnya dari pertama kami saling melihat. Didalam hatiku tanpa sengaja berkata <span>"semoga ini adalah jodohku"</span> entah dari mana feeling dan rasa itu timbul.
+          </p>
+        </div>
+        <div class="t-part">
+          <img src="assets/conversation.svg" alt="valentine photo" />
+          <p>
+            Singkat cerita kami saling berkenalan. Karena Mas Sehu tidak sengaja mendengar pembicaraanku dengan bapakku melalui telefon. Menggunakan bahasa daerah kami yaitu Bahasa Pekalongan. Mulai dari situlah tumbuh rasa ingin mengenal. 
+            </p>
+        </div>
+        <div class="t-part">
+          <img src="assets/valentine.svg" alt="valentine photo" />
+          <p>
+            Dan selama dalam perjalanan pria yang ku ketahui bernama mas Syaekhu itu sangat baik. Mau membawakan barang bawaanku yang teramat banyak. Tidak terlihat modus disana aku melihatnya begitu tulus, hingga membuatku semakin ingin terus mengenalnya . 
+          </p>
+        </div>
+        <div class="t-part">
+          <img src="assets/married.svg" alt="married photo" />
+          <p>
+            Kisah itu berlangsung hingga kini masih bersama <span>2019-2023</span>. Semoga till Jannah sampai maut memisahkan aamiin
+          </p>
+        </div>
+        
+      </div>
       
       <div id="preview">
         
@@ -229,6 +298,10 @@
       
       <h2>Gift</h2>
       
+      <p>
+        Tanpa mengurangi rasa hormat, untuk melengkapi kebahagiaan pengantin, Anda dapat memberikan tanda kasih melalui nomor rekening / dompet digital berikut ini :
+      </p>
+      
       <div class="rekening" data-aos="slide-right">
         <img src="assets/bri.png" alt="logo bank rekening" />
         <div class="info">
@@ -248,7 +321,7 @@
       
       
       <button id="g-btn" onclick="tulisPesan()">
-        Kirim Pesan
+        Kirim Pesan untuk Mempelai
       </button>
       
       
