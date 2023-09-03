@@ -747,11 +747,24 @@
 }
 
 #gift .rekening .info {
+  width: 60%;
+  max-width: 70%;
   display: flex;
+  text-align: left;
   align-self: stretch;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  padding: 2%;
+}
+
+#gift .rekening .info > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  padding: unset;
+  text-align: left;
 }
 
 #gift .rekening .info button {
