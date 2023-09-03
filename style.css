@@ -16,7 +16,7 @@
       }
       #awal {
         position: relative;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         background: url('awal.jpg') center center no-repeat;
         background-size: cover;
@@ -531,8 +531,8 @@
   font-family: "Montserrat", Sans-Serif;
 }
 .tanggal .hari {
-  font-size: 42px;
-  padding: 0 0 0 5%;
+  font-size: 40px;
+  padding: 0 0 0 2%;
   border-left: 2px solid #fff;
 }
 .tanggal .jam p:last-child {
@@ -544,6 +544,7 @@
 }
 .isi .alamat {
   font-size: 0.9em;
+  margin-bottom: 2%;
 }
 .isi #map {
   width: 98%;
@@ -571,7 +572,7 @@
   content:"";
   position: absolute;
   width: 75%;
-  height: 75%;
+  height: 90%;
   bottom: -10%;
   left: 0%;
   background: url('assets/dried.png') left bottom no-repeat;
@@ -612,16 +613,36 @@
   height: auto;
   position: relative;
   margin: 5% auto;
+  text-align: center;
 }
 
-.timeline img {
-  width: 80%;
-  margin: 1% 10%;
+.t-part {
+  margin: 3% auto;
+  width: 90%;
+  height: auto;
+  padding: 5% 0;
   border-top: 25px solid #fff;
   border-bottom: 25px solid #fff;
   border-left: 3px solid #fff;
   border-right: 3px solid #fff;
-  border-radius: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.t-part img {
+  width: 100%;
+}
+
+.t-part p {
+  font-size: 0.9em;
+  padding: 0 2%;
+  text-shadow: 1px 1px 2px #222;
+}
+
+.t-part p span {
+  font-style: italic;
 }
 
 .foto {
@@ -701,6 +722,15 @@
   font-family: "Great Vibes", cursive;
   font-size: 2em;
 }
+
+#gift p {
+  margin-top: 5%;
+  width: 80%;
+  padding: 0 2%;
+  text-align: center;
+  font-family: "Montserrat", Sans-Serif;
+}
+
 #gift .rekening {
   font-family: "Montserrat", Sans-Serif;
   font-weight: bold;
@@ -808,6 +838,7 @@
 }
 
 .pesan p {
+  text-align: left;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
@@ -1104,3 +1135,197 @@ footer > p a {
 #control > button img {
   width: 70%;
 }
+
+#cover {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  background: var(--dasar);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  font-family: "Montserrat", Sans-Serif;
+  text-shadow: 3px 3px 5px #222;
+  background-image: url('assets/frameAwal.png');
+  background-position: center center;
+  background-size: cover;
+  
+}
+
+#cover h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.5em;
+  letter-spacing: 3px;
+}
+
+#cover p {
+  
+}
+
+#cover #bukaUndangan {
+  position: relative;
+  width: 140px;
+  height: 45px;
+  border-radius: 8px;
+  margin-top: 5%;
+  background: transparent;
+  border: none;
+  transition: 0.5s;
+  box-shadow: 1px 1px 2px #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#cover #bukaUndangan::after {
+  content: "";
+  position: absolute;
+  width: 110%;
+  padding-bottom: 100%;
+  background: linear-gradient(to right, transparent, #fff, #fff, #fff, transparent);
+  z-index: -1;
+  transform-origin: left;
+  bottom: -5%;
+  right: 105%;
+  animation: swipe3 10s infinite linear;
+}
+
+@keyframes swipe3 {
+  0%{
+    transform: translateX(0%);
+  }
+  50%{
+    transform: translateX(210%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+#cover #bukaUndangan:hover {
+  box-shadow: inset 1px 1px 2px #222 !important;
+}
+
+#cover #bukaUndangan span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", Sans-Serif;
+  color: #fff;
+  margin: 0;
+  white-space: nowrap;
+  width: 136px;
+  height: 41px;
+  border-radius: inherit;
+  background: var(--dasar);
+  z-index: 3;
+  text-shadow: 2px 2px 5px #222;
+}
+
+.c-poster {
+  text-align: center;
+  width: 150px;
+  position: relative;
+  margin: 1% auto;
+}
+
+.c-poster > *:first-child {
+  text-align: left;
+}
+.c-poster > *:last-child {
+  text-align: right;
+}
+
+#counter, #tamu {
+  width: clamp(100px, 100%, 80%);
+  padding: 3%;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#counter {
+  border: none;
+}
+
+#tamu {
+  aspect-ratio: 4 / 1;
+}
+
+
+#counter div, #counter .selesai {
+  width: 25%;
+  padding-bottom: 25%;
+  margin: 0 2%;
+  background: var(--dasar);
+  box-shadow: 2px 2px 3px #222;
+  border-radius: 8px;
+  position: relative;
+}
+
+#counter .selesai {
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1em;
+}
+
+#counter > div::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: lightblue;
+  z-index: 1;
+  animation: dimming 2s infinite linear;
+}
+
+@keyframes dimming {
+  0%{
+    transform: scale(0.5);
+  }
+  25% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.0);
+  }
+  75% {
+    transform: scale(1.0);
+  }
+  100%{
+    transform: scale(0.5);
+  }
+}
+
+#counter div > *:first-child {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  text-align: center;
+  font-size: 2em;
+}
+
+#counter div > *:last-child {
+  position: absolute;
+  width: 90%;
+  text-align: center;
+  bottom: 5%;
+  left: 5%;
+}
+
