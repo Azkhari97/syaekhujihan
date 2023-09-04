@@ -1,3 +1,4 @@
+let dibuka = false;
 window.onload = (e)=>{
   console.log("everything loaded");
   tamu();
@@ -7,11 +8,13 @@ window.onload = (e)=>{
     console.log(e.target.parentNode.getAttribute('id'))
     document.body.style.setProperty("--play", "play");
     e.target.parentNode.parentNode.style.display = "none";
+    dibuka = true;
     togglePlay();
     window.scrollTo(0,0);
     //scrBtn.click()
   }
 }
+
       
 let audio = document.createElement('audio');
 console.log(audio)
@@ -175,7 +178,12 @@ preview.addEventListener('click', (e)=>{
     body.appendChild(div)
 });
       
-function tampilFoto(src){
+function tampilFoto(el, src){
+    let active = document.getElementsByClassName('active')[0];
+     
+     el.classList.add('active')
+     active.classList.remove('active')
+  
     let a = document.createElement('div');
     a.setAttribute('class', "previewFoto");
     a.setAttribute('style',`background-image: url('${src}')`);
@@ -192,7 +200,7 @@ for(let foto of fotolist){
    foto.setAttribute('urut', n);
    foto.addEventListener('click', (e)=>{
       console.log("tes")
-      tampilFoto(foto.src);
+      tampilFoto(foto, foto.src);
    })
    ++n;
 }
@@ -274,28 +282,48 @@ function copy(ini, data) {
       e => toast(e.toString())//console.log(e.toString())
    );
 }
+
       
 let WadahPesan = document.getElementsByClassName('c-pesan')[0];
-      
-function pesanList(){
+
+function getPesan(){
+  fetch(link)
+  .then((res)=>res.json())
+  .then((data)=>{
+    console.log(data);
+    pesanList(data.pesan);
+  })
+  .catch((e)=> console.log(e.toString()))
+}
+
+function pesanList(arr){
+  WadahPesan.innerHTML = "";
+  for(let list of arr){
    let d = document.createElement('div');
    d.setAttribute('class','pesan');
    d.innerHTML = `
         <p>
-          Pengirim
+          ${list.nama}
           </p>
-          <span>tanggal</span>
-          <span class="konfirmasi">Hadir/Tidak Hadir</span>
+          <span>${list.tanggal}</span>
+          <span class="konfirmasi">${list.konfirmasi}</span>
           
-          <pre>Some wishes from your beloved friends</pre>
+          <pre>${list.pesan}</pre>
    `;
     WadahPesan.appendChild(d);
+   }
 }
 
-for(let n = 0; n<5; n++){
-    pesanList();
+
+let link = "https://littleart.my.id/rest";
+let postParam = {
+  "mode" : "cors",
+  "cache" : "no-cache",
+  "method" : "POST",
+  "headers" : {
+    "Content-Type" : "application/json"
+  },
 }
-      
 function tulisPesan(){
     let p = document.createElement('div');
     p.setAttribute('class', "modal-pesan");
@@ -305,8 +333,8 @@ function tulisPesan(){
         <input id="tanggal" type="text" value="" readonly />
         <select id="konfirmasi">
           <option value="">Konfirmasi Kehadiran</option>
-          <option value="Hadir">Hadir</option>
-          <option value="Tidak Hadir">Tidak Hadir</option>
+          <option value="1">Hadir</option>
+          <option value="2">Tidak Hadir</option>
         </select>
         <textarea id="pesanmu" placeholder="Masukan pesanmu di sini"></textarea>
         
@@ -336,12 +364,24 @@ function tulisPesan(){
     kirim.addEventListener('click', (e)=>{
         let data = {}
         data.nama = nama.value;
-        data.tanggal = tanggal.value;
+        //data.tanggal = tanggal.value;
         data.konfirmasi = konfirmasi.value;
         data.pesan = pesanmu.value;
           
-        if(data.nama == "" || data.pesan == "" || data.konfirmasi){
+        if(data.nama == "" || data.pesan == "" || data.konfirmasi == ""){
             toast("Masukan nama dan pesanmu serta konfirmasi kehadiran.");
+        }
+        else {
+          postParam.body = JSON.stringify(data);
+          
+          fetch(link, postParam)
+          .then((res)=>res.json())
+          .then((feed)=>{
+            console.log(feed)
+            getPesan()
+            document.body.removeChild(p)
+          })
+          .catch((e)=>toast(e.toString()))
         }
         console.log(data)
     })
@@ -378,6 +418,11 @@ function countDown(arr = []){
 let c = setInterval(()=>{
   let arr = timer();
   //console.log(arr)
+  if(dibuka == true){
+    clearInterval(c);
+  }
+  
+  
   if(arr == "selesai"){
     document.getElementById('counter').innerHTML =`
     <div class="selesai">
@@ -389,3 +434,5 @@ let c = setInterval(()=>{
    countDown(arr);
   }
 }, 1000);
+
+getPesan()
