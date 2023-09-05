@@ -1,5 +1,5 @@
 let dibuka = false;
-window.onload = (e)=>{
+//window.onload = (e)=>{
   console.log("everything loaded");
   tamu();
   let bukaUndangan = document.getElementById('bukaUndangan');
@@ -13,7 +13,7 @@ window.onload = (e)=>{
     window.scrollTo(0,0);
     //scrBtn.click()
   }
-}
+//}
 
       
 let audio = document.createElement('audio');
