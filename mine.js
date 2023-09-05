@@ -316,14 +316,14 @@ function pesanList(arr){
 
 
 let link = "https://littleart.my.id/rest";
-let postParam = {
+/*let postParam = {
   "mode" : "cors",
   "cache" : "no-cache",
   "method" : "POST",
   "headers" : {
     "Content-Type" : "application/json"
   },
-}
+}*/
 function tulisPesan(){
     let p = document.createElement('div');
     p.setAttribute('class', "modal-pesan");
@@ -372,9 +372,9 @@ function tulisPesan(){
             toast("Masukan nama dan pesanmu serta konfirmasi kehadiran.");
         }
         else {
-          postParam.body = JSON.stringify(data);
-          
-          fetch(link, postParam)
+          //postParam.body = JSON.stringify(data);
+          let dataUrl = "/" + encodeURI(data.nama) + "/" + data.konfirmasi + "/" + encodeURI(data.pesan);      
+          fetch(link + dataUrl)
           .then((res)=>res.json())
           .then((feed)=>{
             console.log(feed)
