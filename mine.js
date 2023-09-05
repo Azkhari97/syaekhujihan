@@ -315,7 +315,7 @@ function pesanList(arr){
 }
 
 
-let link = "https://littleart.my.id/rest";
+let link = "https://littleart.my.id/public/rest";
 /*let postParam = {
   "mode" : "cors",
   "cache" : "no-cache",
